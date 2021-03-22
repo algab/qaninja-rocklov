@@ -13,32 +13,15 @@ Funcionalidade: Login
         Quando submeto minhas credenciais válidas com "alvaro_teste@email.com" e "12345678"
         Então sou redirecionado para o Dashboard
 
-    Cenario: Senha incorreta
-
+    Esquema do Cenario: Tentativa de Login
         Dado que acesso a página principal
-        Quando submeto minhas credenciais com senha incorreta
-        Então vejo a mensagem de alerta: Usuário e/ou senha inválidos.
+        Quando submeto minhas credenciais válidas com "<email>" e "<senha>"
+        Então vejo a mensagem de alerta: "<mensagem>"
 
-    Cenário: Email não cadastrado
-
-        Dado que acesso a página principal
-        Quando submeto minhas credenciais com email que não existe na Rocklov
-        Então vejo a mensagem de alerta: Usuário e/ou senha inválidos.
-
-    Cenario: Email incorreto
-
-        Dado que acesso a página principal
-        Quando submeto minhas credenciais com email incorreto
-        Então vejo a mensagem de alerta: Oops. Informe um email válido!
-
-    Cenario: Email não informado
-
-        Dado que acesso a página principal
-        Quando submeto minhas credenciais sem o email
-        Então vejo a mensagem de alerta: Oops. Informe um email válido!
-
-    Cenario: Senha não informada
-
-        Dado que acesso a página principal
-        Quando submeto minhas credenciais sem a senha
-        Então vejo a mensagem de alerta: ops. Informe sua senha secreta!
+        Exemplos:
+        |email                 |senha   |mensagem                         |
+        |alvaro_teste@email.com|1234    |Usuário e/ou senha inválidos.    |
+        |teste@email.com       |12345678|Usuário e/ou senha inválidos.    |
+        |alvaro&email          |12345678|Oops. Informe um email válido!   |
+        |                      |12345678|Oops. Informe um email válido!   |
+        |alvaro_teste@email.com|        |Oops. Informe sua senha secreta! |
