@@ -1,0 +1,35 @@
+---
+- title: password invalid
+  payload:
+    email: alvaro_teste@email.com
+    password: '123456'
+  code: 401
+  error: Unauthorized
+- title: user not found
+  payload:
+    email: 404@email.com
+    password: '123456'
+  code: 401
+  error: Unauthorized
+- title: email is empty
+  payload:
+    email: ''
+    password: '123456'
+  code: 412
+  error: required email
+- title: without email field
+  payload:
+    password: '123456'
+  code: 412
+  error: required email
+- title: password is empty
+  payload:
+    email: alvaro_teste@email.com
+    password: ''
+  code: 412
+  error: required password
+- title: without password field
+  payload:
+    email: alvaro_teste@email.com
+  code: 412
+  error: required password
