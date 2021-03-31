@@ -9,7 +9,7 @@ Funcionalidade: Login
     Cenario: Login do usuário
 
         Dado que acesso a página principal
-        Quando submeto minhas credenciais válidas com "alvaro_teste@email.com" e "12345678"
+        Quando submeto minhas credenciais válidas com "alvaro_web@email.com" e "12345678"
         Então sou redirecionado para o Dashboard
 
     Esquema do Cenario: Tentativa de Login

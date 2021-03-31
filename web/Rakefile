@@ -1,0 +1,23 @@
+require "digest/md5"
+
+require_relative "features/support/libs/mongo"
+
+def to_md5(pass)
+  return Digest::MD5.hexdigest(pass)
+end
+
+task :seeds do
+  CONFIG = YAML.load_file(File.join(Dir.pwd, "features/support/config/local.yml"))
+
+  users = [
+    { name: "Alvaro Web", email: "alvaro_web@email.com", password: to_md5("12345678") },
+    { name: "Anderson Silva", email: "spider@email.com", password: to_md5("12345678") },
+    { name: "Joao", email: "joao@email.com", password: to_md5("12345678") },
+    { name: "Maria", email: "maria@email.com", password: to_md5("12345678") }
+  ]
+
+  MongoDB.new.drop_database
+  MongoDB.new.insert_users(users)
+
+  sh "cucumber"
+end

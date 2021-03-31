@@ -6,7 +6,7 @@ Funcionalidade: Cadastro de Anúncios
     Para disponibilizá-los para locação
 
     Contexto: Login
-        * Login com "alvaro_teste@email.com" e "12345678"
+        * Login com "alvaro_web@email.com" e "12345678"
 
     Cenario: Novo equipo
         Dado que acesso o formulário de cadastro de anúncios
