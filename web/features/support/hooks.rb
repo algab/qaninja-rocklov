@@ -5,5 +5,5 @@ Before do
   @signup_page = SignupPage.new
   @equipos_page = EquiposPage.new
 
-  page.current_window.resize_to(1440,900)
+  page.current_window.resize_to(1280,800)
 end
